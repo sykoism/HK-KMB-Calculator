@@ -386,7 +386,7 @@ function queryBbiDirection(routeQuery, company, dirIndex) {
                   var formattedRoutes = escapeHtml(g.routes)
                     .replace(/_\[/g, "<i>[")
                     .replace(/\]_/g, "]</i>");
-                  stopBlock += "     👉 轉乘路線: " + formattedRoutes + "\n";
+                  stopBlock += "     👉 " + formattedRoutes + "\n";
                 });
                 stopBlock += "\n";
                 appendOrPush(stopBlock, header, "KMB", rt);
@@ -485,7 +485,7 @@ function queryBbiDirection(routeQuery, company, dirIndex) {
                 for (var discKey in groupedStops[stopName]) {
                   var g = groupedStops[stopName][discKey];
                   stopBlock += "   • " + escapeHtml(g.disc) + " (時限: " + escapeHtml(g.limit) + "分鐘)\n";
-                  stopBlock += "     👉 轉乘路線: " + g.routesList.join("、") + "\n";
+                  stopBlock += "     👉 " + g.routesList.join("、") + "\n";
                 }
                 stopBlock += "\n";
                 appendOrPush(stopBlock, header, "CTB", routeQuery);

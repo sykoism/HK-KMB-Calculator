@@ -181,7 +181,7 @@ def group_bbi_records(records):
             
         disc_key = (disc, limit)
         if disc_key not in grouped[key][stop]:
-            grouped[key][disc_key] = []
+            grouped[key][stop][disc_key] = []
             
         sec_info = f"{rec['sec_route']} (往 {rec['sec_dest']})"
         if rec["remark"]:
@@ -230,7 +230,7 @@ def format_bbi_message(route_no, co, directions_data):
             msg += f" 📍 {item['stop']}\n"
             for g in item["groups"]:
                 msg += f"   • {g['disc']} (時限: {g['limit']}分鐘)\n"
-                msg += f"     👉 轉乘路線: {g['routes']}\n"
+                msg += f"     👉 {g['routes']}\n"
             msg += "\n"
         msg += "════════════════════\n\n"
         
